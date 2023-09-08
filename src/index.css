@@ -3,11 +3,94 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #311465;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #311465, #000311);
+    
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App{
+  background: white;
+  width: 85%;
+  margin: 80px auto;
+  background: rgba(255, 255, 255, 0.48);
+  border-radius: 6px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.4px);
+  -webkit-backdrop-filter: blur(8.4px);
+  display: flex;
 }
+
+.input--section{
+  margin: 30px;
+}
+
+.jd--heading{
+  color: white;
+  text-align: left;
+  margin: 0px 0px 16px;
+}
+
+.jd--input{
+  background: rgba( 255, 255, 255, 0.45 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 3px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  padding: 10px 0px 0px 10px;
+  display: block;
+}
+
+.jd--submit{
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  color: white;
+  text-transform: uppercase;
+  background: #311465;
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 3px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.results-section{
+  margin: 30px 30px 14px 10px;
+  width: 100%;
+}
+
+.results-card-div{
+  background: rgba( 255, 255, 255, 0.45 );
+  box-shadow: 0 8px 32px 0 rgba(108, 111, 153, 0.37);
+  backdrop-filter: blur( 7px );
+  -webkit-backdrop-filter: blur( 7px );
+  border-radius: 4px;
+  box-sizing: border-box;
+  border-left: 10px solid #311465 ;
+  height: 118px;
+  width: 100%;
+  margin-bottom: 16px;
+  display: flex;
+}
+
+
+.results--CardTitle{
+  text-align: left;
+  color: #404040;
+  font-size: 16px;
+  margin: 16px 16px 8px;
+}
+
+.results--CardData{
+  text-align: left;
+  color: #404040;
+  margin: 0px 16px 16px ;
+  font-size: 12px;
+}
+
+
