@@ -6,10 +6,10 @@ const Result = ({ parsedData }) => {
   return (
     <div className='results-section'>
       <h2 className='jd--heading'>Parsed Information</h2>
-      <ResultCard Title="Salary" Data={parsedData.salary} />
-      <ResultCard Title="Experience" Data={parsedData.experience}/>
-      <ResultCard Title="Location" Data={parsedData.location}/>
-      <ResultCard Title="Visa information" Data={parsedData.visaInfo}/>
+      <ResultCard color="#311465" Title="Salary" Data={parsedData.salary} />
+      <ResultCard color="#311465" Title="Experience" Data={parsedData.experience}/>
+      <ResultCard color="#311465" Title="Skills" Data={parsedData.skills}/>
+      <ResultCard color="#311465" Title="Visa information" Data={parsedData.visaInfo}/>
     </div>
   );
 };

@@ -42,10 +42,42 @@ function App() {
     const visaInfo = extractedVisaInfo.join(', ') || 'Not specified';
   
     // Update the state with the extracted information
+    const salary = "Bachelor's Degree in Industrial Design, Product Design, Human Computer Interaction, or related field AND 3+ years of industry experience working in product or service design, especially on complex problems, OR equivalent experience (e.g., experience using design thinking to solve problems)."
+    const experience = "Bachelor's Degree in Industrial Design, Product Design, Human Computer Interaction, or related field AND 3+ years of industry experience working in product or service design, especially on complex problems, OR equivalent experience (e.g., experience using design thinking to solve problems)."
+    const skills = [
+      "UX",
+      "IxD",
+      "Visual Design",
+      "Figma",
+      "Adobe XD",
+      "Illustrator",
+      "Photoshop",
+      "design tools",
+      "web standards",
+      "accessibility guidelines",
+      "early design concepts",
+      "prototyping",
+      "sketching",
+      "information architecture",
+      "interaction design",
+      "usability",
+      "ideation solutions",
+      "craftsmanship",
+      "insight",
+      "user experiences",
+      "research insights",
+      "inclusive design",
+      "accessible thinking"
+    ].map((skill) => <div className='pill--bg'>{skill}</div>)
+
+    
+    
+    const visaInfo = "Bachelor's Degree in Industrial Design, Product Design, Human Computer Interaction, or related field AND 3+ years of industry experience working in product or service design, especially on complex problems, OR equivalent experience (e.g., experience using design thinking to solve problems)."
+
     setParsedData({
       salary: salaryInfo,
       experience: experienceInfo,
-      location,
+      skills,
       visaInfo,
     });
   };
@@ -54,7 +86,7 @@ function App() {
   return (
     <div className="App">
       <InputForm onParse={parseJobDescription} />
-      {Object.keys(parsedData).length > 0 && <Result parsedData={parsedData} />}
+      {Object.keys(parsedData).length > 0 ? <Result parsedData={parsedData} /> : <EmptyResult/>}
     </div>
   );
 }

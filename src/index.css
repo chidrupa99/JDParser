@@ -5,7 +5,6 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #311465;
     width: 100%;
     height: 100%;
     background: linear-gradient(to right, #311465, #000311);
@@ -34,15 +33,17 @@ body {
   margin: 0px 0px 16px;
 }
 
-.jd--input{
+#jd--input{
   background: rgba( 255, 255, 255, 0.45 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 7px );
   -webkit-backdrop-filter: blur( 7px );
   border-radius: 3px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
-  padding: 10px 0px 0px 10px;
+  padding: 16px;
   display: block;
+  min-height: 450px;
+  height: auto;
 }
 
 .jd--submit{
@@ -64,6 +65,20 @@ body {
   width: 100%;
 }
 
+.nodata_div{
+  width: auto;
+  padding-top: 100px;
+}
+
+.nodata_div img{
+  width: 300px;
+}
+
+.nodata_div p{
+  color: #ffffff;
+  font-weight: 600;
+}
+
 .results-card-div{
   background: rgba( 255, 255, 255, 0.45 );
   box-shadow: 0 8px 32px 0 rgba(108, 111, 153, 0.37);
@@ -71,8 +86,7 @@ body {
   -webkit-backdrop-filter: blur( 7px );
   border-radius: 4px;
   box-sizing: border-box;
-  border-left: 10px solid #311465 ;
-  height: 118px;
+  height: auto;
   width: 100%;
   margin-bottom: 16px;
   display: flex;
@@ -93,4 +107,11 @@ body {
   font-size: 12px;
 }
 
-
+.pill--bg{
+  background:#9888b5;
+  color: #000000;
+  border-radius:10px;
+  padding:6px 10px;
+  margin:0px 4px 4px 0px; 
+  display:inline-block;
+}
