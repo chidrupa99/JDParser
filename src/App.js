@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import InputForm from './components/InputForm';
 import Result from './components/Result';
+import EmptyResult from './components/EmptyResult'
 
 function App() {
   const [parsedData, setParsedData] = useState({});
@@ -72,7 +73,7 @@ function App() {
 
     
     
-    const visaInfo = "Bachelor's Degree in Industrial Design, Product Design, Human Computer Interaction, or related field AND 3+ years of industry experience working in product or service design, especially on complex problems, OR equivalent experience (e.g., experience using design thinking to solve problems)."
+    // const visaInfo = "Bachelor's Degree in Industrial Design, Product Design, Human Computer Interaction, or related field AND 3+ years of industry experience working in product or service design, especially on complex problems, OR equivalent experience (e.g., experience using design thinking to solve problems)."
 
     setParsedData({
       salary: salaryInfo,
