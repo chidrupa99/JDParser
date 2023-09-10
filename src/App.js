@@ -9,32 +9,42 @@ function App() {
   const parseJobDescription = (jobDescription) => {
     // Define regular expressions to capture relevant information
     const salarySentenceRegex = /[^.!?]*\$\s*[^.!?]*/gi;
-    const experienceRegex = /\b(\d+(?:-\d+)?\s?\+?\s?years?(?:\s?(?:of)?\s?(?:professional)?\s?(?:work)?\s?(?:experience)?)?)\b/gi;
+    const experienceSentenceRegex = /[^.!?]*\d+\+\s*[^.!?]*/gi;
     const locationRegex = /\b(\b[A-Za-z\s]+,\s?[A-Za-z\s]+\b)/gi;
     const visaRegex = /\b(?:visa|work visa|H1B|H-1B|J-1|OPT|CPT|TN visa|sponsorship)\b/gi;
   
     // Extract information using regular expressions
     const salarySentences = jobDescription.match(salarySentenceRegex);
-    const experienceMatches = jobDescription.match(experienceRegex);
+    const experienceSentences = jobDescription.match(experienceSentenceRegex);
     const locationMatches = jobDescription.match(locationRegex);
     const visaMatches = jobDescription.match(visaRegex);
   
     // Extracted information arrays
     // const extractedSalaries = salaryMatches || [];
-    const extractedExperiences = experienceMatches || [];
+    // const extractedExperiences = experienceMatches || [];
     const extractedLocations = locationMatches || [];
     const extractedVisaInfo = visaMatches || [];
   
     // Convert arrays to strings
     const salaryInfo = salarySentences ? salarySentences.join('\n') : 'Salary information not found';
-    const experience = extractedExperiences.join(', ') || 'Not specified';
+    // const experience = extractedExperiences.join(', ') || 'Not specified';
+    let experienceInfo = 'Experience information not found';
+  if (experienceSentences) {
+    experienceInfo = (
+      <ul>
+        {experienceSentences.map((sentence, index) => (
+          <li key={index}>{sentence}</li>
+        ))}
+      </ul>
+    );
+  }
     const location = extractedLocations.join(', ') || 'Not specified';
     const visaInfo = extractedVisaInfo.join(', ') || 'Not specified';
   
     // Update the state with the extracted information
     setParsedData({
       salary: salaryInfo,
-      experience,
+      experience: experienceInfo,
       location,
       visaInfo,
     });
