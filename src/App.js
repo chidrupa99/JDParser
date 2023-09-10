@@ -12,19 +12,19 @@ function App() {
     const salarySentenceRegex = /[^.!?]*\$\s*[^.!?]*/gi;
     const experienceSentenceRegex = /[^.!?]*\d+\+\s*[^.!?]*/gi;
     const locationRegex = /\b(\b[A-Za-z\s]+,\s?[A-Za-z\s]+\b)/gi;
-    const visaRegex = /\b(?:visa|work visa|H1B|H-1B|J-1|OPT|CPT|TN visa|sponsorship)\b/gi;
+    const visaSentenceRegex = /.*\bvisa\b.*?[.!?]/i;
   
     // Extract information using regular expressions
     const salarySentences = jobDescription.match(salarySentenceRegex);
     const experienceSentences = jobDescription.match(experienceSentenceRegex);
     const locationMatches = jobDescription.match(locationRegex);
-    const visaMatches = jobDescription.match(visaRegex);
+    const visaSentenceMatch = jobDescription.match(visaSentenceRegex);
   
     // Extracted information arrays
     // const extractedSalaries = salaryMatches || [];
     // const extractedExperiences = experienceMatches || [];
     const extractedLocations = locationMatches || [];
-    const extractedVisaInfo = visaMatches || [];
+    // const extractedVisaInfo = visaMatches || [];
   
     // Convert arrays to strings
     const salaryInfo = salarySentences ? salarySentences.join('\n') : 'Salary information not found';
@@ -40,7 +40,11 @@ function App() {
     );
   }
     const location = extractedLocations.join(', ') || 'Not specified';
-    const visaInfo = extractedVisaInfo.join(', ') || 'Not specified';
+    // const visaInfo = extractedVisaInfo.join(', ') || 'Not specified';
+    let visaInfo = 'Visa information not found';
+    if (visaSentenceMatch && visaSentenceMatch.length > 0) {
+      visaInfo = visaSentenceMatch[0].trim();
+    }
   
     // Update the state with the extracted information
     const salary = "Bachelor's Degree in Industrial Design, Product Design, Human Computer Interaction, or related field AND 3+ years of industry experience working in product or service design, especially on complex problems, OR equivalent experience (e.g., experience using design thinking to solve problems)."
@@ -79,7 +83,7 @@ function App() {
       salary: salaryInfo,
       experience: experienceInfo,
       skills,
-      visaInfo,
+      visaInfo: visaInfo,
     });
   };
   
